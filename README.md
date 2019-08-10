@@ -35,3 +35,7 @@ This causes two things:
 
 When you only want a single editor to remain open, you can use a different command to close _all_ other editors in the group.
 This command also closes non-editor tabs and can do so without switching to the editor it needs to close.
+
+### Attributions
+
+Logo slightly adapted and used under CC-BY 3.0. Created by [Melih Bilgil](www.lonja.de) for [PICOL](www.picol.org)

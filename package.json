@@ -8,6 +8,7 @@
 		"type": "git",
 		"url": "https://github.com/MartyBeGood/vscode-single-editor-tabs"
 	},
+	"icon": "logo.png",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
