@@ -4,6 +4,10 @@
 	"description": "One Tab means One Editor",
 	"version": "0.0.1",
 	"publisher": "MartyBeGood",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MartyBeGood/vscode-single-editor-tabs"
+	},
 	"engines": {
 		"vscode": "^1.37.0"
 	},
