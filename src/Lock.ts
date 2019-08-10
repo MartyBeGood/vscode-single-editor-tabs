@@ -6,15 +6,4 @@ export class Lock {
   stop(): void {
     this.inSession = false;
   }
-  private constructor(){}
-
-  private static instance: Lock;
-
-  static getInstance() {
-    if (!Lock.instance) {
-      Lock.instance = new Lock();
-    }
-    return Lock.instance;
-  }
-
 }

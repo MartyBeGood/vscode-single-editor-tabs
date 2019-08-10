@@ -2,17 +2,23 @@ import { Lock } from './Lock';
 import * as vscode from 'vscode';
 
 export class SingleTab {
+  readonly lock: Lock;
+
+  constructor() {
+    this.lock = new Lock();
+  }
   async onDidChangeActiveTextEditor(editor: vscode.TextEditor) {
-    if (Lock.getInstance().inSession) {
+    if (this.lock.inSession) {
       return;
     }
     try{
-      Lock.getInstance().start();
+      this.lock.start();
+      console.log(editor.document.fileName);
       await vscode.commands.executeCommand("workbench.action.closeOtherEditors");
     } catch {
-      Lock.getInstance().stop();
+      this.lock.stop();
     } finally {
-      Lock.getInstance().stop();
+      this.lock.stop();
     }
   }
 }
