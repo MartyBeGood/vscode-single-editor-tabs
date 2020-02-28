@@ -3,7 +3,14 @@
 Enforce a limit of exactly one editor per editor group. Make VSCode behave a little more like Vim.
 
 If you have an editor group open and open a new file, this extension will close all other editors in this group.
-You will be prompted if you want to save any unsaved work.
+
+## Configuration
+
+- `singleEditorTabs.saveBehaviour`
+  - Valid options:
+    - `save`: Save the old file before closing the editor, without asking
+    - `ask`: Show the standard VSCode dialog for closing a dirty editor
+  - By default, You will be prompted if you want to save any unsaved work.
 
 ## But... Why?
 

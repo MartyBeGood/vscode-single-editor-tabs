@@ -13,7 +13,10 @@ export class SingleTab {
     }
     try{
       this.lock.start();
-      console.log(editor.document.fileName);
+      var old_editor_task = vscode.workspace.getConfiguration("singleEditorTabs").get("saveBehaviour")
+      if(old_editor_task === "save") {
+        await vscode.commands.executeCommand("workbench.files.action.saveAllInGroup")
+      }
       await vscode.commands.executeCommand("workbench.action.closeOtherEditors");
     } catch {
       this.lock.stop();

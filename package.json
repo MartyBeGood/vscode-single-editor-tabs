@@ -2,7 +2,7 @@
 	"name": "single-editor-tabs",
 	"displayName": "Single Editor Tabs",
 	"description": "One Tab means One Editor",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"publisher": "MartyBeGood",
 	"repository": {
 		"type": "git",
@@ -19,7 +19,23 @@
 		"*"
 	],
 	"main": "./out/extension.js",
-	"contributes": {},
+	"contributes": {
+		"configuration": {
+			"title": "Single Editor Tabs",
+			"properties": {
+				"singleEditorTabs.saveBehaviour": {
+					"description": "What to do with the previous editor before closing it",
+					"type": "string",
+					"default": "ask",
+					"enum": ["save", "ask"],
+					"enumDescriptions": [
+						"Save the old editor without asking",
+						"Ask what should happen with the old editor"
+					]
+				}
+			}
+		}
+	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
